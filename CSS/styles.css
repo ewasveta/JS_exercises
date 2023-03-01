@@ -9,9 +9,15 @@ table tr th div              {
                                background-color: rgb(190, 254, 150);                                
                                height: 100%; width: 25%;                               
                                position: absolute;
-                               top: -0.5%;                               
+                               top: -0.2%;                               
                                left: 37%;
                              }
 table tr td                  { width: 30em; }
 table tr td input[type=text] { width: 20em; }
 button                       { width: 10em; }
+#btn2                        { 
+                               display: none;
+                               background-color: #999;
+                               color:white;
+                               box-shadow: 8px 8px 8px 8px lightgray;
+                             } 

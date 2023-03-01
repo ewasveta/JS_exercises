@@ -13,7 +13,7 @@ function equal()
     let rec = nums[0] == nums[1] ? "SQUARE s=" : "rectangle s=";
     console.log("Ex.7: ", rec + nums[0]*nums[1]);                        
 }
-//Ex. 4
+//Ex. 4 - new 18
 function maxNum()
 {
     const n = prompt("Give me some numbers separated by comma ,").split(",");
@@ -96,10 +96,12 @@ function age()
 //Ex. 9
 function chempion()
 {
-    let p1 = prompt("Enter first player name and him score").split(",");
-    let p2 = prompt("Enter second player name and him score").split(",");
+    let p1 = prompt("Enter first player name and him score \n\
+             comma separated").split(",");
+    let p2 = prompt("Enter second player name and him score \n\
+             comma separated").split(",");
     let txt = "Standoff !";
-    if(p1[1] > p2[1])
+    if(parseInt(p1[1]) > parseInt(p2[1]))
     {
         txt = "Chempion: " + p1[0] + " " + p1[1];
     }
@@ -189,12 +191,164 @@ function tram()
 
      document.getElementById("txt6").value = profit;
 }
+//Ex.17 - new 4
+function congrats()
+{
+    let num = parseInt(prompt("Please give me an hours between 5 and 23"));
+    if(isNaN(num))
+    {
+        document.querySelector("#txt17").value = 'אני צריך שעה';
+        return;
+    }
+    if(num < 5 || num > 23)
+    {
+        document.querySelector("#txt17").value = 'לא בטווח';
+        return;      
+    }
+    if(num < 12)
+    {
+        document.querySelector("#txt17").value = 'בוקר טוב';
+        return;
+    }
+    if(num < 18)
+    {
+        document.querySelector("#txt17").value = 'צהריים טובים';
+        return;
+    }
+    document.querySelector("#txt17").value = 'ערב טוב';       
+}
+//Ex.18 - new 7
+function taxi()
+{
+    let num = prompt("Please give me number of people waiting for taxi:"); 
+    if(parseInt(num) < 12)
+    {
+        document.querySelector("#txt18").value = "Wait until the taxi is full."
+        return;
+    }
+    if(parseInt(num) == 12)
+    {
+        document.querySelector("#txt18").value = `We left. Nobody waiting.`
+        return;
+    }    
+    if(parseInt(num) >= 12)
+    {
+        document.querySelector("#txt18").value = `We left. ${parseInt(num)-12} are still waiting...`
+    }
+}
+//Ex.19 - new 9
+function thursday()
+{
+    let str = prompt("Please give me some date"); 
+    const d = new Date(str);    //("February 23, 2023");
+    let foo = (d.getDay() == 4) ? "Thursday! Yay!" : "You know...";
+    document.querySelector("#txt19").value = foo;    
+}
+//Ex.20 - new 10
+function BMI()
+{
+    let num = parseInt( prompt("Please give me your BMI")); 
+    if( isNaN(num))
+    {
+        document.querySelector("#txt20").value = "אני צריך מספר"
+        return;
+    }
+    if(num <= 18)
+    {
+        document.querySelector("#txt20").value = "שלך נמוך מדי BMI";
+        return;
+    }
+    if(num <= 25)
+    {
+        document.querySelector("#txt20").value = "שלך בסדר גמור BMI";
+        return;
+    }
+    document.querySelector("#txt20").value = "שלך מסוכן BMI";
+}
+//Ex.21 - new 11
+function compare()
+{
+    const str = prompt("Please give me some sentence");
+    const confirm = prompt("Please confirm your sentence");
+    let res = (str === confirm) ? "You are correct" : "NOT correct";
+    document.querySelector("#txt21").value = res;
+}
+//Ex.22 - new 12
+function root()
+{
+    let num = parseInt( prompt("Please give me a number")); 
+    if( isNaN(num))
+    {
+        document.querySelector("#txt22").value = "אני צריך מספר"
+        return;
+    }
+    document.querySelector("#txt22").value =`${Math.sqrt(num)}`;
+}
+//Ex.23 - new 13
+let relay = 1;
+function mutual()
+{
+    if(relay == -1)
+    {
+        document.querySelector("#btn1").style.display='inline';
+        document.querySelector("#btn2").style.display='none';
+    }
+    else
+    {
+        document.querySelector("#btn1").style.display='none';
+        document.querySelector("#btn2").style.display='inline';
+    }
+    relay *= -1;
+}
+//Ex.24 - new 14
+function blank()
+{
+    window.open();
+}
+//Ex.25 - new 15
+function today()
+{
+    const d = new Date();
+    document.querySelector("#txt25").value = d;
+}
+//Ex.26 - new 16
+let count = 0;
+function clickCount()
+{
+    count++;
+    document.querySelector("#txt26").value = `Hello, You've cklicked me ${count} times`;
+}
+//Ex.27 - new 17
+function nudnik()
+{
+    let num = parseInt( prompt("Please give me a number")); 
+    if( isNaN(num))
+    {
+        document.querySelector("#txt27").value = "אני צריך מספר"
+        return;
+    }
+    for(let i=0; i<num; i++)
+    {
+        console.log(`${i}.Oh, I have to repeat to you ${num} times! Oh...`)
+    }
+    document.querySelector("#txt27").value = "The output is shown on the console"
+}
+//Ex.28 - new 19
+function tip()
+{
+    window.open("payment.html");
+}
+//Ex.29 - new 20
+function crement()
+{
+    window.open("inde.html");
+}
 
+//Animation
 let sgn = 1;
 setInterval(makeSkew, 3000);
 function makeSkew()
-{            
-    // console.log("sgn: ", sgn);
+{
     document.getElementById("thDiv").style = 
     'transform: skewX('+sgn*50+'deg); transition: 2s ease;';
     sgn *= -1;
