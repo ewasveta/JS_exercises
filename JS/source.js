@@ -336,12 +336,12 @@ function nudnik()
 //Ex.28 - new 19
 function tip()
 {
-    window.open("payment.html");
+    window.open("https://ewasveta.github.io/JS_exercises/payment.html");
 }
 //Ex.29 - new 20
 function crement()
 {
-    window.open("inde.html");
+    window.open("https://ewasveta.github.io/JS_exercises/inde.html");
 }
 
 //Animation
