@@ -335,13 +335,13 @@ function nudnik()
 }
 //Ex.28 - new 19
 function tip()
-{
-    window.open("https://ewasveta.github.io/JS_exercises/payment.html");
+{             
+    window.open("https://ewasveta.github.io/JS_exercises/payment.html", '_blank');
 }
 //Ex.29 - new 20
 function crement()
 {
-    window.open("https://ewasveta.github.io/JS_exercises/inde.html");
+    window.open("https://ewasveta.github.io/JS_exercises/inde.html", '_blank');
 }
 
 //Animation
